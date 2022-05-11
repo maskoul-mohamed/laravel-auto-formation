@@ -61,3 +61,5 @@ Route::get('/products/{name}/{id}', [ProductsController::class, 'show'])->where(
     ['name'=> '[a-zA-Z]+',
     'id' =>'[0-9]+']
 );
+
+Route::get('/products', [ProductsController::class, 'index'])->name('products');
