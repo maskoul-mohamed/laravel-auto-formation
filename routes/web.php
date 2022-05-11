@@ -57,4 +57,7 @@ Route::get('/home', function(){
     return view('home');
 });
 
-Route::get('/products/{name}', [ProductsController::class, 'show']);
+Route::get('/products/{name}/{id}', [ProductsController::class, 'show'])->where(
+    ['name'=> '[a-zA-Z]+',
+    'id' =>'[0-9]+']
+);
