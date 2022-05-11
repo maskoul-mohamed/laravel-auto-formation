@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HelloWorld;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,3 +31,30 @@ Route::get('/about', function() {
 Route::get('/contact', function() {
     return view('/pages.contact');
 });
+
+Route::get('/users', function() {
+    return "This is users page";
+});
+
+Route::get('/users', function () {
+    return ['PHP', 'JS', 'HTML', 'Laravel'];
+});
+
+Route::get('/users', function () {
+    return response()->json(
+        [
+            'name' => 'PHP',
+            'framework' => 'Laravel'
+        ]
+    );
+});
+
+Route::get('/users', function () {
+    return redirect('/');
+});
+
+Route::get('/home', function(){
+    return view('home');
+});
+
+Route::get('/products/{name}', [ProductsController::class, 'show']);
