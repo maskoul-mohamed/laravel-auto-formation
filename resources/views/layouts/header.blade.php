@@ -22,7 +22,7 @@
             <li>
                 <a 
                     href="about"
-                    class="{{ request()->is('about') ? 'active' : '' }}">
+                    class="{{ request()->is('about/*') ? 'active' : '' }}">
                     About
                 </a>
             </li>

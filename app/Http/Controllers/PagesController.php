@@ -11,6 +11,7 @@ class PagesController extends Controller
     }
 
     public function about(){
-        return view('about');
+        $data = "Maskoul";
+        return view('about')->with("data", $data);
     }
 }
